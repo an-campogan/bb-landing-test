@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Byte Busters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navigating Bar -->
+<header class = "header">
+    <div class = "nav-container">
+        <a href = "# " class = "logo" onclick="showPage('home')"> Byte Busters </a>
+        <div class = "search-bar">
+            <input type="text" id="searchInput" placeholder="search products..">
+            <button> Search </button>
+        </div>
+        <div class="nav-actions">
+            <a href="# " class="nav-btn" > Account </a>
+            <a href="# " class="nav-btn" > Cart <span id="cartCount">(0) </span> </a>
+            <a href="# " class="nav-btn" > Orders </a>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content-->
+<main class="main-content">
+
+    <!-- Landing -->
+    <div id="homePage" class="page">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Byte Busters</h1>
+                <p>
+                    Discover amazing products at unbeatable prices
+                </p>
+                <a href="#categories" class="hero-btn">Shop Now</a>
+            </div>
+        </section>
+
+        <section class="categories" id="categories">
+            <div class="container">
+                <h2>
+                    Shop by Category
+                </h2>
+                <div class="category-grid" id="categoryGrid">
+                    MicroControllers <br>
+                    Beginner Kits <br>
+                    Breadboard Essentials <br>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Category -->
+    <div id="categoryPage" class="page hidden">
+        <div class="container">
+            <h1 id="categoryTitle">
+                Products
+            </h1>
+            <div class="filter-section">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="sortBy">Sort By:</label>
+                        <select id="sortBy" onchange="applyFilters()">
+                            <option value="relevance">Relevance</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="priceRange">Max Price:</label>
+                        <input type="range" id="priceRange" min="0" max="10000" value="10000" onchange="applyFilters()">
+                        <span id="priceValue">₱ 10000</span>
+                    </div>
+                    <div class="filter-group">
+                        <label for="brandFilter">Brand:</label>
+                        <select id="brandFilter" onchange="applyFilters()">
+                            <option value="">All Brands</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="product-grid" id="productGrid">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Details -->
+    <div id="productDetailsPage" class="page hidden">
+        <div class="container">
+            <div class="product-detail" id="productDetails">
+
+            </div>
+        </div>
+
+    <!-- Cart -->
+
+        <div id="cartPage" class="page hidden">
+            <div class = "container">
+                <h1> My Cart </h1>
+                <div id = "cartItems">
+                </div>
+                <div class="cart-summary" id="cartSummary">
+                </div>
+            </div>
+        </div>
+        <div id="cartToast">
+            <img id="toastImg" src="" alt="Product">
+            <div class="toast-content">
+                <h4 id="toastTitle">Product Added</h4>
+                <p>✓ Successfully added to cart</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="orderPage" class="page hidden">
+        <div class="container">
+            <h1>
+                Place Order
+            </h1>
+            <div id="orderSteps">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="ordersPage" class="page hidden">
+        <div class="container">
+            <h1>My Orders</h1>
+            <div id="ordersList">
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="script.js"> </script>
+</body>
+</html>
